@@ -1,0 +1,10 @@
+.well-known/
+php/config.php
+node_modules/
+vendor/
+venv/
+.env/
+__pycache__/
+temp_uploads/.env
+php/credentials.json
+php/*.bak*
