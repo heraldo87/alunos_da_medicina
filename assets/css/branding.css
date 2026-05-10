@@ -1684,3 +1684,1211 @@ select {
         width: 100%;
     }
 }
+
+/* =========================================================
+   29. ASSISTENTE DE ESTUDOS
+========================================================= */
+
+.ai-disclaimer {
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.22);
+    color: var(--color-text);
+    border-radius: var(--radius-lg);
+    padding: 16px 18px;
+    font-size: 0.96rem;
+}
+
+.ai-disclaimer strong {
+    color: var(--color-primary);
+}
+
+.ai-chat-shell {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.ai-chat-history {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+    min-height: 360px;
+}
+
+.ai-empty-state {
+    min-height: 320px;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    text-align: center;
+    padding: 32px;
+}
+
+.ai-empty-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 22px;
+    display: grid;
+    place-items: center;
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    margin-bottom: 18px;
+}
+
+.ai-empty-icon .sidebar-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.ai-empty-icon svg {
+    width: 30px;
+    height: 30px;
+}
+
+.ai-empty-state h2 {
+    color: var(--color-primary);
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+}
+
+.ai-empty-state p {
+    color: var(--color-muted);
+    max-width: 520px;
+}
+
+.ai-suggestion-list {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 22px;
+}
+
+.ai-suggestion {
+    border: 1px solid var(--color-border);
+    background: #FFFFFF;
+    color: var(--color-primary);
+    border-radius: var(--radius-full);
+    padding: 10px 14px;
+    cursor: pointer;
+    font-weight: 750;
+    transition: 0.2s ease;
+}
+
+.ai-suggestion:hover {
+    border-color: var(--color-secondary);
+    color: var(--color-secondary-dark);
+    transform: translateY(-1px);
+}
+
+.ai-message {
+    max-width: 860px;
+    margin-bottom: 18px;
+    border-radius: var(--radius-xl);
+    padding: 18px;
+    border: 1px solid var(--color-border);
+}
+
+.ai-message-user {
+    margin-left: auto;
+    background: var(--color-primary);
+    color: #FFFFFF;
+    border-color: transparent;
+}
+
+.ai-message-assistant {
+    margin-right: auto;
+    background: #FFFFFF;
+    color: var(--color-text);
+    box-shadow: var(--shadow-sm);
+}
+
+.ai-message-label {
+    font-size: 0.82rem;
+    font-weight: 850;
+    margin-bottom: 8px;
+    opacity: 0.82;
+}
+
+.ai-message-content {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.ai-message-time {
+    font-size: 0.78rem;
+    opacity: 0.62;
+    margin-top: 12px;
+}
+
+.ai-chat-form {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: 22px;
+    box-shadow: var(--shadow-sm);
+}
+
+.ai-textarea {
+    margin-top: 8px;
+}
+
+.ai-form-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+}
+
+@media (max-width: 720px) {
+    .ai-form-footer {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .ai-form-footer .btn {
+        width: 100%;
+    }
+
+    .ai-message {
+        max-width: 100%;
+    }
+}
+
+/* =========================================================
+   30. ASSISTENTE - MÚLTIPLAS CONVERSAS
+========================================================= */
+
+.ai-workspace {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.ai-conversations-panel {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: 18px;
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 28px;
+}
+
+.ai-conversations-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.ai-conversations-header h2 {
+    color: var(--color-primary);
+    font-size: 1.1rem;
+}
+
+.ai-conversation-empty {
+    color: var(--color-muted);
+    background: var(--color-surface-soft);
+    border-radius: var(--radius-lg);
+    padding: 16px;
+    font-size: 0.94rem;
+}
+
+.ai-conversation-list {
+    display: grid;
+    gap: 8px;
+}
+
+.ai-conversation-link {
+    display: block;
+    padding: 13px;
+    border-radius: var(--radius-lg);
+    border: 1px solid transparent;
+    color: var(--color-text);
+    transition: 0.2s ease;
+}
+
+.ai-conversation-link:hover,
+.ai-conversation-link.active {
+    background: var(--color-primary-light);
+    border-color: rgba(15, 61, 94, 0.12);
+}
+
+.ai-conversation-link strong {
+    display: block;
+    color: var(--color-primary);
+    font-size: 0.94rem;
+    line-height: 1.25;
+    margin-bottom: 4px;
+}
+
+.ai-conversation-link span {
+    display: block;
+    color: var(--color-muted);
+    font-size: 0.82rem;
+    line-height: 1.35;
+}
+
+.ai-chat-area {
+    display: grid;
+    gap: 16px;
+}
+
+.ai-chat-title {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: 22px;
+    box-shadow: var(--shadow-sm);
+}
+
+.ai-chat-title h2 {
+    color: var(--color-primary);
+    font-size: 1.35rem;
+    line-height: 1.2;
+}
+
+.ai-chat-title p {
+    color: var(--color-muted);
+    margin-top: 4px;
+}
+
+@media (max-width: 1000px) {
+    .ai-workspace {
+        grid-template-columns: 1fr;
+    }
+
+    .ai-conversations-panel {
+        position: static;
+    }
+}
+
+/* =========================================================
+   31. PROFESSOR AO VIVO - REALTIME
+========================================================= */
+
+.realtime-professor-card {
+    display: grid;
+    grid-template-columns: 1.4fr 0.7fr;
+    gap: 28px;
+    align-items: stretch;
+    background:
+        radial-gradient(circle at top right, rgba(24, 169, 153, 0.16), transparent 34%),
+        linear-gradient(135deg, #FFFFFF, #F8FAFC);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: 34px;
+    box-shadow: var(--shadow-md);
+}
+
+.realtime-professor-content h2 {
+    color: var(--color-primary);
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    line-height: 1.08;
+    letter-spacing: -0.05em;
+    margin-top: 16px;
+}
+
+.realtime-professor-content p {
+    color: var(--color-muted);
+    font-size: 1.05rem;
+    max-width: 720px;
+    margin-top: 14px;
+}
+
+.realtime-warning {
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.22);
+    border-radius: var(--radius-lg);
+    padding: 16px 18px;
+    margin-top: 22px;
+    color: var(--color-text);
+}
+
+.realtime-warning strong {
+    color: var(--color-primary);
+}
+
+.realtime-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+}
+
+.realtime-status {
+    margin-top: 18px;
+    color: var(--color-muted);
+    font-weight: 750;
+}
+
+.realtime-professor-visual {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    border-radius: var(--radius-xl);
+    min-height: 260px;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 24px;
+}
+
+.realtime-professor-visual p {
+    color: rgba(255,255,255,0.88);
+    font-weight: 850;
+    margin-top: 18px;
+}
+
+.realtime-orb {
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: rgba(255,255,255,0.16);
+    border: 1px solid rgba(255,255,255,0.26);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.18);
+}
+
+.realtime-orb span {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    opacity: 0.88;
+}
+
+.realtime-orb.active {
+    animation: realtimePulse 1.4s ease-in-out infinite;
+}
+
+@keyframes realtimePulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 24px 60px rgba(0,0,0,0.18);
+    }
+    50% {
+        transform: scale(1.04);
+        box-shadow: 0 28px 80px rgba(0,0,0,0.24);
+    }
+}
+
+@media (max-width: 900px) {
+    .realtime-professor-card {
+        grid-template-columns: 1fr;
+    }
+
+    .realtime-professor-visual {
+        min-height: 200px;
+    }
+}
+
+/* =========================================================
+   32. PROFESSOR AO VIVO - TELA FOCADA
+========================================================= */
+
+.realtime-focus-body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top left, rgba(24, 169, 153, 0.13), transparent 34%),
+        linear-gradient(135deg, #F8FAFC, #FFFFFF);
+}
+
+.realtime-focus-page {
+    min-height: 100vh;
+    padding: 24px;
+}
+
+.realtime-focus-header {
+    max-width: 1440px;
+    margin: 0 auto 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.realtime-focus-brand {
+    color: var(--color-primary);
+}
+
+.realtime-focus-brand small {
+    display: block;
+    color: var(--color-muted);
+    font-size: 0.78rem;
+    margin-top: 2px;
+}
+
+.realtime-focus-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.realtime-focus-layout {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 22px;
+    align-items: stretch;
+}
+
+.realtime-instructions-panel,
+.realtime-stage-card {
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    backdrop-filter: blur(16px);
+}
+
+.realtime-instructions-panel {
+    padding: 24px;
+    display: grid;
+    gap: 18px;
+    align-content: start;
+}
+
+.realtime-panel-section h2,
+.realtime-panel-section h3 {
+    color: var(--color-primary);
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.realtime-instruction-list {
+    list-style: none;
+    display: grid;
+    gap: 14px;
+}
+
+.realtime-instruction-list li {
+    padding: 14px;
+    background: var(--color-surface-soft);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+}
+
+.realtime-instruction-list strong {
+    display: block;
+    color: var(--color-primary);
+    margin-bottom: 4px;
+}
+
+.realtime-instruction-list span {
+    color: var(--color-muted);
+    font-size: 0.92rem;
+    line-height: 1.45;
+}
+
+.realtime-educational-warning {
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.22);
+    border-radius: var(--radius-lg);
+    padding: 16px;
+}
+
+.realtime-educational-warning strong {
+    color: var(--color-primary);
+}
+
+.realtime-educational-warning p {
+    color: var(--color-muted);
+    margin-top: 6px;
+    font-size: 0.94rem;
+    line-height: 1.5;
+}
+
+.realtime-example {
+    width: 100%;
+    text-align: left;
+    border: 1px solid var(--color-border);
+    background: #FFFFFF;
+    color: var(--color-primary);
+    border-radius: var(--radius-lg);
+    padding: 12px 14px;
+    cursor: pointer;
+    font-weight: 750;
+    margin-top: 8px;
+    transition: 0.2s ease;
+}
+
+.realtime-example:hover {
+    border-color: var(--color-secondary);
+    color: var(--color-secondary-dark);
+    transform: translateY(-1px);
+}
+
+.realtime-main-stage {
+    min-width: 0;
+}
+
+.realtime-stage-card {
+    min-height: calc(100vh - 118px);
+    padding: 32px;
+    display: grid;
+    grid-template-rows: auto 1fr auto auto;
+    gap: 24px;
+}
+
+.realtime-stage-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.realtime-status-pill {
+    border: 1px solid var(--color-border);
+    background: var(--color-surface-soft);
+    color: var(--color-muted);
+    border-radius: var(--radius-full);
+    padding: 9px 14px;
+    font-weight: 850;
+    font-size: 0.9rem;
+}
+
+.realtime-status-pill.connected {
+    background: rgba(24, 169, 153, 0.12);
+    color: var(--color-secondary-dark);
+    border-color: rgba(24, 169, 153, 0.26);
+}
+
+.realtime-professor-avatar-area {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.realtime-professor-avatar-area h1 {
+    color: var(--color-primary);
+    font-size: clamp(2rem, 5vw, 4.2rem);
+    letter-spacing: -0.06em;
+    line-height: 1.02;
+    margin-top: 28px;
+}
+
+.realtime-professor-avatar-area p {
+    color: var(--color-muted);
+    margin-top: 12px;
+    font-size: 1.05rem;
+}
+
+.realtime-orb-large {
+    width: clamp(170px, 24vw, 260px);
+    height: clamp(170px, 24vw, 260px);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background:
+        radial-gradient(circle at 30% 25%, rgba(255,255,255,0.85), transparent 22%),
+        linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    box-shadow:
+        0 32px 90px rgba(15, 61, 94, 0.28),
+        inset 0 0 42px rgba(255,255,255,0.18);
+    position: relative;
+}
+
+.realtime-orb-large::before,
+.realtime-orb-large::after {
+    content: "";
+    position: absolute;
+    inset: -16px;
+    border-radius: 50%;
+    border: 1px solid rgba(24, 169, 153, 0.24);
+}
+
+.realtime-orb-large::after {
+    inset: -34px;
+    opacity: 0.45;
+}
+
+.realtime-orb-large span {
+    width: 42%;
+    height: 42%;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.88);
+    box-shadow: 0 14px 34px rgba(0,0,0,0.16);
+}
+
+.realtime-orb-large.active {
+    animation: realtimeFocusPulse 1.35s ease-in-out infinite;
+}
+
+@keyframes realtimeFocusPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.045);
+    }
+}
+
+.voice-visualizer-card {
+    border: 1px solid var(--color-border);
+    background: linear-gradient(135deg, #FFFFFF, #F8FAFC);
+    border-radius: var(--radius-xl);
+    padding: 18px;
+}
+
+.voice-visualizer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 12px;
+}
+
+.voice-visualizer-header strong {
+    color: var(--color-primary);
+}
+
+.voice-visualizer-header span {
+    color: var(--color-muted);
+    font-size: 0.9rem;
+    font-weight: 750;
+}
+
+#voiceCanvas {
+    width: 100%;
+    height: 180px;
+    display: block;
+    border-radius: var(--radius-lg);
+    background:
+        radial-gradient(circle at center, rgba(24, 169, 153, 0.12), transparent 42%),
+        #FFFFFF;
+    color: var(--color-secondary);
+}
+
+.realtime-actions-centered {
+    justify-content: center;
+}
+
+@media (max-width: 1100px) {
+    .realtime-focus-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .realtime-stage-card {
+        min-height: auto;
+    }
+
+    .realtime-instructions-panel {
+        order: 2;
+    }
+
+    .realtime-main-stage {
+        order: 1;
+    }
+}
+
+@media (max-width: 720px) {
+    .realtime-focus-page {
+        padding: 16px;
+    }
+
+    .realtime-focus-header,
+    .realtime-focus-header-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .realtime-focus-header-actions .btn,
+    .realtime-actions-centered .btn {
+        width: 100%;
+    }
+
+    .realtime-stage-card,
+    .realtime-instructions-panel {
+        padding: 20px;
+    }
+
+    .realtime-stage-top {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+/* =========================================================
+   33. ASSISTENTE - EDITAR E REMOVER CONVERSA
+========================================================= */
+
+.ai-chat-title {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.ai-chat-title-main {
+    min-width: 260px;
+    flex: 1;
+}
+
+.ai-chat-title-actions {
+    display: grid;
+    gap: 10px;
+    min-width: min(100%, 430px);
+}
+
+.ai-title-form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ai-title-input {
+    min-width: 220px;
+}
+
+.btn-danger {
+    background: #B42318;
+    color: #FFFFFF;
+    border-color: #B42318;
+}
+
+.btn-danger:hover {
+    background: #912018;
+    border-color: #912018;
+    color: #FFFFFF;
+}
+
+@media (max-width: 720px) {
+    .ai-chat-title,
+    .ai-title-form {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .ai-chat-title-actions,
+    .ai-title-form,
+    .ai-title-input,
+    .ai-chat-title-actions .btn {
+        width: 100%;
+    }
+}
+
+/* =========================================================
+   34. DASHBOARD APPS / MENTORIA
+========================================================= */
+
+.dashboard-apps-section {
+    margin-top: 28px;
+}
+
+.section-heading {
+    margin-bottom: 18px;
+}
+
+.section-heading h2 {
+    color: var(--color-primary);
+    font-size: 1.35rem;
+    line-height: 1.2;
+    margin-bottom: 4px;
+}
+
+.section-heading p {
+    color: var(--color-muted);
+    font-size: 0.96rem;
+}
+
+.ios-app-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 180px));
+    gap: 18px;
+}
+
+.ios-app-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 180px;
+    padding: 20px 18px;
+    text-align: center;
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: 28px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.ios-app-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(24, 169, 153, 0.22);
+}
+
+.ios-app-icon {
+    width: 78px;
+    height: 78px;
+    border-radius: 24px;
+    display: grid;
+    place-items: center;
+    color: #FFFFFF;
+    background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.28), transparent 35%),
+        linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    box-shadow:
+        0 14px 34px rgba(15, 61, 94, 0.20),
+        inset 0 0 12px rgba(255,255,255,0.14);
+}
+
+.ios-app-icon svg {
+    width: 34px;
+    height: 34px;
+}
+
+.ios-app-name {
+    color: var(--color-primary);
+    font-size: 1rem;
+    font-weight: 850;
+    line-height: 1.2;
+}
+
+.ios-app-caption {
+    color: var(--color-muted);
+    font-size: 0.82rem;
+    line-height: 1.35;
+}
+
+/* =========================================================
+   35. MENTORIA HUB
+========================================================= */
+
+.mentoria-hero-card {
+    display: grid;
+    grid-template-columns: 1.4fr 0.6fr;
+    gap: 24px;
+    align-items: center;
+    padding: 30px;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-border);
+    background:
+        radial-gradient(circle at top right, rgba(24, 169, 153, 0.16), transparent 30%),
+        linear-gradient(135deg, #FFFFFF, #F8FAFC);
+    box-shadow: var(--shadow-md);
+}
+
+.mentoria-hero-content h2 {
+    color: var(--color-primary);
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    line-height: 1.04;
+    letter-spacing: -0.05em;
+    margin-top: 14px;
+}
+
+.mentoria-hero-content p {
+    color: var(--color-muted);
+    font-size: 1.02rem;
+    line-height: 1.7;
+    margin-top: 14px;
+    max-width: 760px;
+}
+
+.mentoria-hero-icon {
+    display: grid;
+    place-items: center;
+}
+
+.ios-app-icon-large {
+    width: 140px;
+    height: 140px;
+    border-radius: 36px;
+    display: grid;
+    place-items: center;
+    color: #FFFFFF;
+    background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.28), transparent 35%),
+        linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    box-shadow:
+        0 22px 50px rgba(15, 61, 94, 0.22),
+        inset 0 0 16px rgba(255,255,255,0.14);
+}
+
+.ios-app-icon-large svg {
+    width: 60px;
+    height: 60px;
+}
+
+.mentoria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+    margin-top: 24px;
+}
+
+.mentoria-card {
+    display: block;
+    padding: 24px;
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.mentoria-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(24, 169, 153, 0.24);
+}
+
+.mentoria-card-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    display: grid;
+    place-items: center;
+    color: #FFFFFF;
+    background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.24), transparent 35%),
+        linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    margin-bottom: 16px;
+}
+
+.mentoria-card-icon svg {
+    width: 30px;
+    height: 30px;
+}
+
+.mentoria-card h3 {
+    color: var(--color-primary);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.mentoria-card p {
+    color: var(--color-muted);
+    line-height: 1.55;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+    .mentoria-hero-card {
+        grid-template-columns: 1fr;
+    }
+
+    .mentoria-hero-icon {
+        justify-content: start;
+    }
+}
+
+/* =========================================================
+   36. DASHBOARD - APP MENTORIA PREMIUM
+========================================================= */
+
+.dashboard-apps-section {
+    margin-top: 34px;
+}
+
+.section-heading {
+    margin-bottom: 18px;
+}
+
+.section-heading h2 {
+    color: var(--color-primary);
+    font-size: 1.45rem;
+    line-height: 1.2;
+    margin-bottom: 4px;
+    letter-spacing: -0.03em;
+}
+
+.section-heading p {
+    color: var(--color-muted);
+    font-size: 0.98rem;
+}
+
+.mentoria-dashboard-app {
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 26px;
+    min-height: 230px;
+    padding: 32px;
+    border-radius: 34px;
+    border: 1px solid rgba(15, 61, 94, 0.10);
+    background:
+        radial-gradient(circle at 12% 20%, rgba(255, 255, 255, 0.82), transparent 24%),
+        radial-gradient(circle at 85% 18%, rgba(24, 169, 153, 0.24), transparent 30%),
+        linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 46%, rgba(220, 252, 246, 0.72) 100%);
+    box-shadow:
+        0 24px 70px rgba(15, 61, 94, 0.10),
+        inset 0 1px 0 rgba(255, 255, 255, 0.86);
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        border-color 0.22s ease;
+}
+
+.mentoria-dashboard-app::before {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    right: -90px;
+    bottom: -120px;
+    border-radius: 50%;
+    background: rgba(24, 169, 153, 0.14);
+}
+
+.mentoria-dashboard-app::after {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border-radius: 26px;
+    border: 1px solid rgba(255, 255, 255, 0.62);
+    pointer-events: none;
+}
+
+.mentoria-dashboard-app:hover {
+    transform: translateY(-4px);
+    border-color: rgba(24, 169, 153, 0.28);
+    box-shadow:
+        0 32px 90px rgba(15, 61, 94, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.92);
+}
+
+.mentoria-dashboard-icon {
+    position: relative;
+    z-index: 1;
+    width: 118px;
+    height: 118px;
+    border-radius: 32px;
+    display: grid;
+    place-items: center;
+    color: #FFFFFF;
+    background:
+        radial-gradient(circle at 28% 22%, rgba(255,255,255,0.40), transparent 28%),
+        linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    box-shadow:
+        0 24px 54px rgba(15, 61, 94, 0.26),
+        inset 0 0 18px rgba(255, 255, 255, 0.16);
+}
+
+.mentoria-dashboard-icon svg {
+    width: 54px;
+    height: 54px;
+}
+
+.mentoria-dashboard-content {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+}
+
+.mentoria-dashboard-kicker {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 8px 13px;
+    border-radius: var(--radius-full);
+    background: rgba(24, 169, 153, 0.12);
+    color: var(--color-secondary-dark);
+    font-size: 0.82rem;
+    font-weight: 900;
+    margin-bottom: 12px;
+}
+
+.mentoria-dashboard-content h3 {
+    color: var(--color-primary);
+    font-size: clamp(2.2rem, 4vw, 3.8rem);
+    line-height: 0.96;
+    letter-spacing: -0.07em;
+    margin-bottom: 12px;
+}
+
+.mentoria-dashboard-content p {
+    color: var(--color-muted);
+    font-size: 1.05rem;
+    line-height: 1.65;
+    max-width: 680px;
+}
+
+.mentoria-dashboard-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 18px;
+}
+
+.mentoria-dashboard-tags span {
+    padding: 8px 12px;
+    border-radius: var(--radius-full);
+    background: #FFFFFF;
+    border: 1px solid rgba(15, 61, 94, 0.08);
+    color: var(--color-primary);
+    font-size: 0.82rem;
+    font-weight: 850;
+    box-shadow: 0 8px 18px rgba(15, 61, 94, 0.05);
+}
+
+.mentoria-dashboard-action {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-width: 120px;
+    height: 52px;
+    padding: 0 20px;
+    border-radius: var(--radius-full);
+    background: var(--color-primary);
+    color: #FFFFFF;
+    font-weight: 900;
+    box-shadow: 0 16px 36px rgba(15, 61, 94, 0.22);
+}
+
+.mentoria-dashboard-action svg {
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 980px) {
+    .mentoria-dashboard-app {
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+
+    .mentoria-dashboard-action {
+        width: fit-content;
+    }
+}
+
+@media (max-width: 720px) {
+    .mentoria-dashboard-app {
+        padding: 24px;
+        border-radius: 28px;
+    }
+
+    .mentoria-dashboard-icon {
+        width: 96px;
+        height: 96px;
+        border-radius: 28px;
+    }
+
+    .mentoria-dashboard-icon svg {
+        width: 44px;
+        height: 44px;
+    }
+
+    .mentoria-dashboard-action {
+        width: 100%;
+    }
+}

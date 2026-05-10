@@ -38,6 +38,22 @@ function sidebar_icon_svg(string $name): string
                 <path d="M18 12H9"></path>
             </svg>
         ',
+        'ai' => '
+            <svg viewBox="0 0 24 24">
+                <path d="M12 3a7 7 0 0 0-7 7c0 2.3 1.1 4.4 2.8 5.7L8 21l4-2 4 2 .2-5.3A7 7 0 0 0 12 3z"></path>
+                <path d="M9 10h.01"></path>
+                <path d="M15 10h.01"></path>
+                <path d="M9.5 14c1.5 1 3.5 1 5 0"></path>
+            </svg>
+        ',
+        'mic' => '
+            <svg viewBox="0 0 24 24">
+                <path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3z"></path>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                <path d="M12 19v3"></path>
+                <path d="M8 22h8"></path>
+            </svg>
+        ',
     ];
 
     $icon = $icons[$name] ?? $icons['home'];

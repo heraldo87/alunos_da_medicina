@@ -29,18 +29,32 @@ function load_env(string $path): void
 
         if ($key !== '') {
             $_ENV[$key] = $value;
-            putenv($key . '=' . $value);
+            $_SERVER[$key] = $value;
+
+            if (function_exists('putenv')) {
+                @putenv($key . '=' . $value);
+            }
         }
     }
 }
 
 function env_value(string $key, mixed $default = null): mixed
 {
-    $value = $_ENV[$key] ?? getenv($key);
-
-    if ($value === false || $value === null || $value === '') {
-        return $default;
+    if (array_key_exists($key, $_ENV) && $_ENV[$key] !== '') {
+        return $_ENV[$key];
     }
 
-    return $value;
+    if (array_key_exists($key, $_SERVER) && $_SERVER[$key] !== '') {
+        return $_SERVER[$key];
+    }
+
+    if (function_exists('getenv')) {
+        $value = getenv($key);
+
+        if ($value !== false && $value !== '') {
+            return $value;
+        }
+    }
+
+    return $default;
 }
