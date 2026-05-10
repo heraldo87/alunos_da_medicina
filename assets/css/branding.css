@@ -1,0 +1,1686 @@
+/*
+|--------------------------------------------------------------------------
+| ALUNOS DA MEDICINA - BRANDING CSS
+|--------------------------------------------------------------------------
+| Base visual oficial do projeto.
+| Use este arquivo como referência para cores, botões, cards, formulários,
+| dashboard, espaçamentos e componentes principais.
+|--------------------------------------------------------------------------
+*/
+
+/* =========================================================
+   1. TOKENS DA MARCA
+========================================================= */
+
+:root {
+    /* Cores principais */
+    --color-primary: #0F3D5E;
+    --color-primary-dark: #0A2D47;
+    --color-primary-light: #E0F2FE;
+
+    --color-secondary: #18A999;
+    --color-secondary-dark: #0F8A7D;
+    --color-secondary-light: #DDFDF8;
+
+    /* Cores neutras */
+    --color-background: #F8FAFC;
+    --color-surface: #FFFFFF;
+    --color-surface-soft: #F1F5F9;
+
+    --color-text: #334155;
+    --color-text-dark: #0F172A;
+    --color-muted: #64748B;
+    --color-border: #E2E8F0;
+
+    /* Estados */
+    --color-success: #16A34A;
+    --color-warning: #F59E0B;
+    --color-danger: #DC2626;
+    --color-info: #0284C7;
+
+    /* Tipografia */
+    --font-main: Inter, Arial, Helvetica, sans-serif;
+
+    /* Bordas */
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-xl: 28px;
+    --radius-full: 999px;
+
+    /* Sombras */
+    --shadow-sm: 0 8px 24px rgba(15, 61, 94, 0.06);
+    --shadow-md: 0 18px 40px rgba(15, 61, 94, 0.10);
+    --shadow-lg: 0 30px 80px rgba(15, 61, 94, 0.14);
+
+    /* Espaçamentos */
+    --container-width: 1120px;
+    --section-padding: 72px;
+}
+
+/* =========================================================
+   2. RESET BASE
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    background: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img,
+svg {
+    max-width: 100%;
+    display: block;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+/* =========================================================
+   3. LAYOUT GLOBAL
+========================================================= */
+
+.container {
+    width: min(var(--container-width), 92%);
+    margin: 0 auto;
+}
+
+.section {
+    padding: var(--section-padding) 0;
+}
+
+.section-sm {
+    padding: 40px 0;
+}
+
+.section-lg {
+    padding: 96px 0;
+}
+
+.grid {
+    display: grid;
+    gap: 24px;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* =========================================================
+   4. TIPOGRAFIA
+========================================================= */
+
+.heading-xl {
+    color: var(--color-primary);
+    font-size: clamp(2.4rem, 5vw, 4.8rem);
+    line-height: 1.04;
+    letter-spacing: -0.06em;
+    font-weight: 900;
+}
+
+.heading-lg {
+    color: var(--color-primary);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    font-weight: 850;
+}
+
+.heading-md {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.heading-sm {
+    color: var(--color-primary);
+    font-size: 1.1rem;
+    line-height: 1.3;
+    font-weight: 800;
+}
+
+.text-lead {
+    color: var(--color-muted);
+    font-size: 1.18rem;
+    max-width: 680px;
+}
+
+.text-muted {
+    color: var(--color-muted);
+}
+
+.text-primary {
+    color: var(--color-primary);
+}
+
+.text-secondary {
+    color: var(--color-secondary);
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* =========================================================
+   5. BRANDING / LOGO
+========================================================= */
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--color-primary);
+    font-weight: 850;
+}
+
+.brand-logo {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border-radius: 16px;
+    color: #FFFFFF;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    box-shadow: var(--shadow-sm);
+}
+
+.brand-name {
+    font-size: 1.15rem;
+    letter-spacing: -0.02em;
+}
+
+.brand-slogan {
+    color: var(--color-muted);
+    font-size: 0.95rem;
+}
+
+/* =========================================================
+   6. HEADER / NAVBAR
+========================================================= */
+
+.header {
+    padding: 22px 0;
+    background: rgba(248, 250, 252, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* =========================================================
+   7. BOTÕES
+========================================================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 12px 18px;
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-weight: 750;
+    transition: 0.2s ease;
+    white-space: nowrap;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background: var(--color-primary-dark);
+}
+
+.btn-secondary {
+    background: var(--color-secondary);
+    color: #FFFFFF;
+}
+
+.btn-secondary:hover {
+    background: var(--color-secondary-dark);
+}
+
+.btn-outline {
+    background: #FFFFFF;
+    color: var(--color-primary);
+    border-color: var(--color-border);
+}
+
+.btn-outline:hover {
+    border-color: var(--color-primary);
+}
+
+.btn-soft {
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+}
+
+.btn-danger {
+    background: var(--color-danger);
+    color: #FFFFFF;
+}
+
+.btn-full {
+    width: 100%;
+}
+
+.btn-sm {
+    min-height: 36px;
+    padding: 8px 14px;
+    font-size: 0.9rem;
+}
+
+.btn-lg {
+    min-height: 52px;
+    padding: 14px 24px;
+    font-size: 1.05rem;
+}
+
+/* =========================================================
+   8. BADGES / TAGS
+========================================================= */
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: var(--radius-full);
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+.badge-success {
+    background: rgba(22, 163, 74, 0.10);
+    color: var(--color-success);
+}
+
+.badge-warning {
+    background: rgba(245, 158, 11, 0.12);
+    color: var(--color-warning);
+}
+
+.badge-danger {
+    background: rgba(220, 38, 38, 0.10);
+    color: var(--color-danger);
+}
+
+/* =========================================================
+   9. CARDS
+========================================================= */
+
+.card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+}
+
+.card-md {
+    padding: 32px;
+}
+
+.card-lg {
+    padding: 40px;
+}
+
+.card-hover {
+    transition: 0.2s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.card-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 16px;
+    display: grid;
+    place-items: center;
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    margin-bottom: 18px;
+    font-size: 1.35rem;
+}
+
+/* =========================================================
+   10. HERO / LANDING PAGE
+========================================================= */
+
+.hero {
+    padding: 88px 0 72px;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 32px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 42px;
+}
+
+.section-header p {
+    margin: 12px auto 0;
+}
+
+/* =========================================================
+   11. FORMULÁRIOS
+========================================================= */
+
+.form {
+    display: grid;
+    gap: 18px;
+}
+
+.form-group {
+    display: grid;
+    gap: 8px;
+}
+
+.label {
+    color: var(--color-text-dark);
+    font-weight: 750;
+    font-size: 0.95rem;
+}
+
+.input,
+.select,
+.textarea {
+    width: 100%;
+    min-height: 46px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: #FFFFFF;
+    color: var(--color-text);
+    padding: 12px 14px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 4px rgba(24, 169, 153, 0.12);
+}
+
+.form-help {
+    color: var(--color-muted);
+    font-size: 0.88rem;
+}
+
+.form-error {
+    color: var(--color-danger);
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+/* =========================================================
+   12. TELAS DE LOGIN / CADASTRO
+========================================================= */
+
+.auth-page {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 40px 16px;
+    background:
+        radial-gradient(circle at top left, rgba(24, 169, 153, 0.12), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(15, 61, 94, 0.12), transparent 34%),
+        var(--color-background);
+}
+
+.auth-card {
+    width: min(460px, 100%);
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: 34px;
+    box-shadow: var(--shadow-lg);
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.auth-header .brand {
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 22px;
+    color: var(--color-muted);
+    font-size: 0.95rem;
+}
+
+/* =========================================================
+   13. ALERTAS
+========================================================= */
+
+.alert {
+    padding: 14px 16px;
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
+    font-weight: 650;
+}
+
+.alert-success {
+    background: rgba(22, 163, 74, 0.10);
+    color: var(--color-success);
+    border-color: rgba(22, 163, 74, 0.18);
+}
+
+.alert-warning {
+    background: rgba(245, 158, 11, 0.12);
+    color: var(--color-warning);
+    border-color: rgba(245, 158, 11, 0.20);
+}
+
+.alert-danger {
+    background: rgba(220, 38, 38, 0.10);
+    color: var(--color-danger);
+    border-color: rgba(220, 38, 38, 0.18);
+}
+
+.alert-info {
+    background: rgba(2, 132, 199, 0.10);
+    color: var(--color-info);
+    border-color: rgba(2, 132, 199, 0.18);
+}
+
+/* =========================================================
+   14. DASHBOARD BASE
+========================================================= */
+
+.app-shell {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    background: var(--color-background);
+}
+
+.sidebar {
+    background: var(--color-primary);
+    color: #FFFFFF;
+    padding: 24px;
+}
+
+.sidebar .brand {
+    color: #FFFFFF;
+    margin-bottom: 32px;
+}
+
+.sidebar-menu {
+    display: grid;
+    gap: 8px;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: var(--radius-md);
+    color: rgba(255, 255, 255, 0.82);
+    font-weight: 700;
+    transition: 0.2s ease;
+}
+
+.sidebar-link:hover,
+.sidebar-link.active {
+    background: rgba(255, 255, 255, 0.12);
+    color: #FFFFFF;
+}
+
+.main-content {
+    padding: 28px;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 28px;
+}
+
+.page-title h1 {
+    color: var(--color-primary);
+    font-size: 2rem;
+    line-height: 1.15;
+    letter-spacing: -0.04em;
+}
+
+.page-title p {
+    color: var(--color-muted);
+    margin-top: 4px;
+}
+
+.metric-card {
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: 22px;
+    box-shadow: var(--shadow-sm);
+}
+
+.metric-value {
+    color: var(--color-primary);
+    font-size: 2rem;
+    line-height: 1;
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+
+.metric-label {
+    color: var(--color-muted);
+    font-size: 0.95rem;
+}
+
+/* =========================================================
+   15. TABELAS
+========================================================= */
+
+.table-wrapper {
+    overflow-x: auto;
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.table th {
+    color: var(--color-primary);
+    font-size: 0.9rem;
+    background: var(--color-surface-soft);
+}
+
+.table td {
+    color: var(--color-text);
+}
+
+.table tr:last-child td {
+    border-bottom: none;
+}
+
+/* =========================================================
+   16. COMPONENTES ACADÊMICOS
+========================================================= */
+
+.subject-card {
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+}
+
+.subject-code {
+    color: var(--color-secondary);
+    font-size: 0.85rem;
+    font-weight: 850;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.group-card {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: #FFFFFF;
+    border-radius: var(--radius-xl);
+    padding: 26px;
+    box-shadow: var(--shadow-md);
+}
+
+.group-card p {
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.ai-panel {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: #FFFFFF;
+    border-radius: var(--radius-xl);
+    padding: 28px;
+    box-shadow: var(--shadow-md);
+}
+
+.ai-panel p {
+    color: rgba(255, 255, 255, 0.86);
+}
+
+/* =========================================================
+   17. UTILITÁRIOS
+========================================================= */
+
+.mt-1 { margin-top: 8px; }
+.mt-2 { margin-top: 16px; }
+.mt-3 { margin-top: 24px; }
+.mt-4 { margin-top: 32px; }
+
+.mb-1 { margin-bottom: 8px; }
+.mb-2 { margin-bottom: 16px; }
+.mb-3 { margin-bottom: 24px; }
+.mb-4 { margin-bottom: 32px; }
+
+.gap-1 { gap: 8px; }
+.gap-2 { gap: 16px; }
+.gap-3 { gap: 24px; }
+.gap-4 { gap: 32px; }
+
+.w-full {
+    width: 100%;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.rounded {
+    border-radius: var(--radius-md);
+}
+
+.rounded-xl {
+    border-radius: var(--radius-xl);
+}
+
+.shadow {
+    box-shadow: var(--shadow-md);
+}
+
+/* =========================================================
+   18. RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 1000px) {
+    .hero-grid,
+    .grid-4,
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .app-shell {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: none;
+    }
+}
+
+@media (max-width: 720px) {
+    :root {
+        --section-padding: 52px;
+    }
+
+    .nav,
+    .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .nav-actions {
+        width: 100%;
+    }
+
+    .nav-actions .btn {
+        flex: 1;
+    }
+
+    .hero-grid,
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 56px 0;
+    }
+
+    .auth-card {
+        padding: 26px;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+}
+
+/* =========================================================
+   19. LANDING PAGE - COMPLEMENTOS DO INDEX
+========================================================= */
+
+.preview-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: 24px;
+    box-shadow: var(--shadow-lg);
+}
+
+.dashboard-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.dashboard-title {
+    font-weight: 850;
+    color: var(--color-primary);
+}
+
+.status {
+    background: rgba(24, 169, 153, 0.12);
+    color: var(--color-secondary);
+    padding: 6px 10px;
+    border-radius: var(--radius-full);
+    font-weight: 850;
+    font-size: 0.78rem;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.stat {
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 18px;
+}
+
+.stat strong {
+    display: block;
+    color: var(--color-primary);
+    font-size: 1.8rem;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+
+.stat span {
+    color: var(--color-muted);
+    font-size: 0.92rem;
+}
+
+.ai-box {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: #FFFFFF;
+    border-radius: var(--radius-lg);
+    padding: 22px;
+}
+
+.ai-box h3 {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+}
+
+.ai-box p {
+    color: rgba(255,255,255,0.86);
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 16px;
+    display: grid;
+    place-items: center;
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    margin-bottom: 18px;
+    font-size: 1.4rem;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+}
+
+.step {
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 22px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+}
+
+.step-number {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    margin: 0 auto 14px;
+    display: grid;
+    place-items: center;
+    background: var(--color-secondary);
+    color: #FFFFFF;
+    font-weight: 900;
+}
+
+.cta {
+    background: var(--color-primary);
+    color: #FFFFFF;
+    border-radius: 34px;
+    padding: 48px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: center;
+}
+
+.cta h2 {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    letter-spacing: -0.04em;
+    margin-bottom: 8px;
+}
+
+.cta p {
+    color: rgba(255,255,255,0.78);
+}
+
+.cta .btn {
+    background: #FFFFFF;
+    color: var(--color-primary);
+}
+
+.footer {
+    padding: 36px 0;
+    color: var(--color-muted);
+    border-top: 1px solid var(--color-border);
+    margin-top: 72px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 620px) {
+    .cards,
+    .steps,
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .cta {
+        padding: 32px;
+    }
+}
+
+/* =========================================================
+   20. LOGIN / AUTH - COMPLEMENTOS
+========================================================= */
+
+.auth-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: -4px;
+}
+
+.checkbox-line {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-muted);
+    font-size: 0.92rem;
+    cursor: pointer;
+}
+
+.checkbox-line input {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--color-secondary);
+}
+
+.auth-link {
+    color: var(--color-secondary);
+    font-weight: 800;
+    transition: 0.2s ease;
+}
+
+.auth-link:hover {
+    color: var(--color-secondary-dark);
+    text-decoration: underline;
+}
+
+@media (max-width: 520px) {
+    .auth-options {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+
+/* =========================================================
+   21. CADASTRO - COMPLEMENTOS
+========================================================= */
+
+.auth-card-wide {
+    width: min(760px, 100%);
+}
+
+.form-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+@media (max-width: 720px) {
+    .form-grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   22. PÁGINAS LEGAIS - TERMOS / PRIVACIDADE
+========================================================= */
+
+.legal-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 28px;
+    align-items: start;
+}
+
+.legal-sidebar {
+    position: sticky;
+    top: 104px;
+}
+
+.legal-menu {
+    display: grid;
+    gap: 8px;
+}
+
+.legal-menu-link {
+    display: block;
+    padding: 11px 13px;
+    border-radius: var(--radius-md);
+    color: var(--color-muted);
+    font-weight: 750;
+    transition: 0.2s ease;
+}
+
+.legal-menu-link:hover,
+.legal-menu-link.active {
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+}
+
+.legal-content {
+    max-width: 860px;
+}
+
+.legal-section {
+    padding: 26px 0;
+    border-top: 1px solid var(--color-border);
+}
+
+.legal-section:first-of-type {
+    border-top: none;
+    padding-top: 0;
+}
+
+.legal-section h2 {
+    color: var(--color-primary);
+    font-size: 1.25rem;
+    line-height: 1.3;
+    margin-bottom: 12px;
+}
+
+.legal-section p {
+    color: var(--color-text);
+    margin-bottom: 14px;
+}
+
+.legal-section p:last-child {
+    margin-bottom: 0;
+}
+
+.legal-section ul {
+    padding-left: 22px;
+    color: var(--color-text);
+}
+
+.legal-section li {
+    margin-bottom: 8px;
+}
+
+.legal-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+    padding-top: 28px;
+    border-top: 1px solid var(--color-border);
+}
+
+@media (max-width: 900px) {
+    .legal-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .legal-sidebar {
+        position: static;
+    }
+}
+
+
+/* =========================================================
+   23. DASHBOARD - COMPLEMENTOS VISUAIS
+========================================================= */
+
+.mobile-app-header {
+    display: none;
+    padding: 16px 20px;
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.sidebar-brand {
+    align-items: flex-start;
+}
+
+.sidebar-brand-subtitle {
+    display: block;
+    color: rgba(255, 255, 255, 0.66);
+    font-size: 0.78rem;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-top: 2px;
+}
+
+.dashboard-user-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 12px 16px;
+    box-shadow: var(--shadow-sm);
+}
+
+.dashboard-user-card strong {
+    display: block;
+    color: var(--color-primary);
+    line-height: 1.2;
+}
+
+.dashboard-user-card span {
+    display: block;
+    color: var(--color-muted);
+    font-size: 0.88rem;
+    margin-top: 3px;
+}
+
+.avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 16px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: #FFFFFF;
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+
+.dashboard-welcome {
+    display: grid;
+    grid-template-columns: 1.5fr 0.7fr;
+    gap: 24px;
+    align-items: stretch;
+    background:
+        radial-gradient(circle at top right, rgba(24, 169, 153, 0.18), transparent 32%),
+        linear-gradient(135deg, #FFFFFF, #F8FAFC);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: 34px;
+    box-shadow: var(--shadow-md);
+}
+
+.dashboard-welcome h2 {
+    color: var(--color-primary);
+    font-size: clamp(1.8rem, 4vw, 3.2rem);
+    line-height: 1.08;
+    letter-spacing: -0.05em;
+    margin-top: 18px;
+    max-width: 720px;
+}
+
+.dashboard-welcome p {
+    color: var(--color-muted);
+    font-size: 1.05rem;
+    max-width: 720px;
+    margin-top: 14px;
+}
+
+.dashboard-ai-card {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: #FFFFFF;
+    border-radius: var(--radius-xl);
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 220px;
+    box-shadow: var(--shadow-md);
+}
+
+.dashboard-ai-card span {
+    font-size: 2rem;
+    margin-bottom: 16px;
+}
+
+.dashboard-ai-card h3 {
+    font-size: 1.35rem;
+    margin-bottom: 8px;
+}
+
+.dashboard-ai-card p {
+    color: rgba(255, 255, 255, 0.82);
+    margin: 0;
+    font-size: 0.96rem;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.empty-state {
+    background: var(--color-surface-soft);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 18px;
+}
+
+.empty-state strong {
+    display: block;
+    color: var(--color-primary);
+    margin-bottom: 4px;
+}
+
+.empty-state span {
+    color: var(--color-muted);
+    font-size: 0.94rem;
+}
+
+.dashboard-checklist {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+}
+
+.dashboard-checklist li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-muted);
+    font-weight: 700;
+}
+
+.dashboard-checklist li::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-border);
+    flex: 0 0 auto;
+}
+
+.dashboard-checklist li.done {
+    color: var(--color-primary);
+}
+
+.dashboard-checklist li.done::before {
+    background: var(--color-secondary);
+    box-shadow: 0 0 0 4px rgba(24, 169, 153, 0.12);
+}
+
+.profile-list {
+    display: grid;
+    gap: 12px;
+}
+
+.profile-list div {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.profile-list div:last-child {
+    border-bottom: none;
+}
+
+.profile-list span {
+    display: block;
+    color: var(--color-muted);
+    font-size: 0.86rem;
+    margin-bottom: 3px;
+}
+
+.profile-list strong {
+    color: var(--color-primary);
+}
+
+.ai-prompt-preview {
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    border-radius: var(--radius-lg);
+    padding: 18px;
+    color: rgba(255, 255, 255, 0.90);
+    font-weight: 700;
+}
+
+@media (max-width: 1000px) {
+    .mobile-app-header {
+        display: flex;
+    }
+
+    .dashboard-welcome,
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 720px) {
+    .dashboard-user-card {
+        width: 100%;
+    }
+
+    .dashboard-welcome {
+        padding: 24px;
+    }
+
+    .dashboard-ai-card {
+        min-height: auto;
+    }
+}
+
+/* =========================================================
+   24. DASHBOARD SIMPLIFICADO
+========================================================= */
+
+.dashboard-welcome-simple {
+    grid-template-columns: 1fr;
+}
+
+.dashboard-welcome-simple > div {
+    max-width: 760px;
+}
+
+.dashboard-welcome-simple .hero-actions {
+    display: none;
+}
+
+/* =========================================================
+   25. ÍCONES PROFISSIONAIS DO MENU LATERAL
+========================================================= */
+
+.sidebar-icon {
+    width: 22px;
+    height: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    opacity: 0.86;
+}
+
+.sidebar-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.sidebar-link {
+    font-size: 0.98rem;
+    letter-spacing: -0.01em;
+}
+
+.sidebar-link.active .sidebar-icon,
+.sidebar-link:hover .sidebar-icon {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   26. PERFIL DO ALUNO
+========================================================= */
+
+.profile-hero {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    background:
+        radial-gradient(circle at top right, rgba(24, 169, 153, 0.16), transparent 32%),
+        linear-gradient(135deg, #FFFFFF, #F8FAFC);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: 32px;
+    box-shadow: var(--shadow-md);
+}
+
+.profile-avatar-large {
+    width: 96px;
+    height: 96px;
+    border-radius: 28px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: #FFFFFF;
+    font-size: 2.4rem;
+    font-weight: 900;
+    flex: 0 0 auto;
+    box-shadow: var(--shadow-md);
+}
+
+.profile-hero h2 {
+    color: var(--color-primary);
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+    margin-top: 14px;
+}
+
+.profile-hero p {
+    color: var(--color-muted);
+    max-width: 720px;
+    margin-top: 10px;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.profile-detail-list {
+    display: grid;
+    gap: 0;
+}
+
+.profile-detail-list div {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.profile-detail-list div:last-child {
+    border-bottom: none;
+}
+
+.profile-detail-list span {
+    display: block;
+    color: var(--color-muted);
+    font-size: 0.86rem;
+    margin-bottom: 4px;
+}
+
+.profile-detail-list strong {
+    color: var(--color-primary);
+    font-weight: 800;
+    word-break: break-word;
+}
+
+.profile-actions-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.profile-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.profile-actions .btn:disabled {
+    opacity: 0.58;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.inline-line-icon {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+@media (max-width: 900px) {
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-hero {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+/* =========================================================
+   27. BOTÃO DO PAINEL ADMINISTRATIVO
+========================================================= */
+
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.admin-top-button {
+    box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 720px) {
+    .topbar-actions {
+        width: 100%;
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .admin-top-button,
+    .topbar-actions .dashboard-user-card {
+        width: 100%;
+    }
+}
+
+/* =========================================================
+   28. ADMIN - APROVAÇÃO DE ALUNOS
+========================================================= */
+
+.admin-section-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.admin-table td {
+    vertical-align: middle;
+}
+
+.admin-table td strong {
+    display: block;
+    color: var(--color-primary);
+    line-height: 1.25;
+}
+
+.admin-table-muted {
+    display: block;
+    color: var(--color-muted);
+    font-size: 0.86rem;
+    margin-top: 4px;
+}
+
+.admin-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.admin-actions form {
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .admin-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .admin-actions .btn {
+        width: 100%;
+    }
+}

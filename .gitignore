@@ -1,10 +1,32 @@
-.well-known/
-php/config.php
-node_modules/
+# Ambiente / segredos
+.env
+*.env
+!.env.example
+
+# Backups
+*.backup.*
+*.bak
+*.sql
+*.tar
+*.tar.gz
+*.zip
+
+# Logs
+*.log
+logs/
+
+# Editor / sistema
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Dependências futuras
 vendor/
-venv/
-.env/
-__pycache__/
-temp_uploads/.env
-php/credentials.json
-php/*.bak*
+node_modules/
+
+# Uploads futuros
+uploads/
+storage/
+cache/
+n8n/testar-webhook.php
