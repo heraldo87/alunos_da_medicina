@@ -116,3 +116,5 @@ materiais/
 # Arquivos específicos
 # =========================
 n8n/testar-webhook.php
+# Configurações locais das provas
+provas/**/config.php
